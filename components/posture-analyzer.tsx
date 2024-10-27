@@ -5,6 +5,7 @@ import { Upload, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import Image from 'next/image';
 
 export function PostureAnalyzer() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -103,10 +104,11 @@ export function PostureAnalyzer() {
 
           {selectedImage && (
             <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-              <img
+              <Image
                 src={selectedImage}
                 alt="Selected posture"
-                className="w-full h-full object-contain"
+                layout="fill"
+                objectFit="contain"
               />
             </div>
           )}
