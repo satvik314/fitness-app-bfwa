@@ -3,6 +3,8 @@ import { generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
+export const maxDuration = 5;
+
 const mealPlanSchema = z.object({
   weeklyPlan: z.object({
     calories: z.number(),

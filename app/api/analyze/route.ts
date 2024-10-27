@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Groq } from "groq-sdk";
 
+export const maxDuration = 5;
+
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
 export const runtime = 'edge';
+
 
 export async function POST(req: NextRequest) {
   try {
